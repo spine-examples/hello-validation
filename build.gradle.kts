@@ -40,3 +40,13 @@ allprojects {
         }
     }
 }
+
+// Introduce the `buildAll` task that invokes `buildAll` on all subprojects.
+// The `buildAll` task in subprojcts is added by the `module` script plugin.
+val buildAll by tasks.registering {
+    dependsOn(
+        rootProject.subprojects.map { p : Project ->
+            p.tasks.named("buildAll")
+        }
+    )
+}
