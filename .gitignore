@@ -71,6 +71,9 @@
 # Build files produced by the IDE
 **/out/**
 
+# The output directory of the `RunGradle` task.
+_out/
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
