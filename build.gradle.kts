@@ -28,17 +28,6 @@ allprojects {
     apply(from = "$rootDir/version.gradle.kts")
     group = "io.spine.examples.validation"
     version = extra["validationVersion"]!!
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven {
-            url = java.net.URI("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
-        }
-        maven {
-            url = java.net.URI("https://europe-maven.pkg.dev/spine-event-engine/releases")
-        }
-    }
 }
 
 // Introduce the `buildAll` task that invokes `buildAll` on all subprojects.
