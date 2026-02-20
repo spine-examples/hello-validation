@@ -30,12 +30,8 @@ pluginManagement {
     repositories {
         mavenLocal()
         gradlePluginPortal()
-        maven {
-            url = java.net.URI("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
-        }
-        maven {
-            url = java.net.URI("https://europe-maven.pkg.dev/spine-event-engine/releases")
-        }
+        maven("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
+        maven("https://europe-maven.pkg.dev/spine-event-engine/releases")
     }
 }
 
