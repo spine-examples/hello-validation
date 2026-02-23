@@ -26,5 +26,5 @@
 
 plugins {
     module
-    id("io.spine.validation") version "2.0.0-SNAPSHOT.395"
+    id("io.spine.validation") version "2.0.0-SNAPSHOT.396"
 }
