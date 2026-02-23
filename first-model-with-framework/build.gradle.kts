@@ -28,10 +28,3 @@ plugins {
     module
     id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.054"
 }
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-    maven("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
-    maven("https://europe-maven.pkg.dev/spine-event-engine/releases")
-}
