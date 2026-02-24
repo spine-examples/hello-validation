@@ -101,7 +101,7 @@ class BankCardKtTest {
         val card = BankCard.newBuilder()
             .setOwner("ALEX SMITH")
             .setDigits("wrong number")
-            .buildPartial() // There is no Kotlin DSL for this.
+            .buildPartial()
         val error = card.validate()
         error.shouldBePresent()
 
