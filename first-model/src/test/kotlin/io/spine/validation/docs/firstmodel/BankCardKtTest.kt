@@ -40,6 +40,7 @@ class BankCardKtTest {
     fun `throw ValidationException if digits are invalid`() {
         // #docfragment "invalid-digits"
         shouldThrow<ValidationException> {
+            // Kotlin proto DSL delegates to a Java builder.
             bankCard {
                 digits = "invalid"
                 owner = "ALEX SMITH"
@@ -95,6 +96,8 @@ class BankCardKtTest {
     @Test
     fun `provide a formatted error message for an invalid card`() {
         // #docfragment "error-message"
+        // There is no Kotlin DSL which allows building a non-valid message.
+        // So we use a builder from Java.
         val card = BankCard.newBuilder()
             .setOwner("ALEX SMITH")
             .setDigits("wrong number")
