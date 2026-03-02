@@ -24,19 +24,27 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-rootProject.name = "hello-validation"
+package io.spine.validation.docs.external
 
-pluginManagement {
-    repositories {
-        mavenLocal()
-        gradlePluginPortal()
-        maven("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
-        maven("https://europe-maven.pkg.dev/spine-event-engine/releases")
+import com.google.protobuf.timestamp
+import io.kotest.assertions.throwables.shouldThrow
+import io.spine.validation.ValidationException
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+
+@DisplayName("`Meeting` should")
+class MeetingKtTest {
+
+    @Test
+    @DisplayName("throw `ValidationException` if `starts_at` is an invalid `Timestamp`")
+    fun `invalid timestamp`() {
+        val invalid = timestamp {
+            nanos = -1
+        }
+        shouldThrow<ValidationException> {
+            meeting {
+                startsAt = invalid
+            }
+        }
     }
 }
-
-include(
-    ":first-model",
-    ":first-model-with-framework",
-    ":external"
-)

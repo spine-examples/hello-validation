@@ -24,19 +24,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-rootProject.name = "hello-validation"
-
-pluginManagement {
-    repositories {
-        mavenLocal()
-        gradlePluginPortal()
-        maven("https://europe-maven.pkg.dev/spine-event-engine/snapshots")
-        maven("https://europe-maven.pkg.dev/spine-event-engine/releases")
-    }
+plugins {
+    module
+    id("io.spine.validation") version "2.0.0-SNAPSHOT.401"
 }
 
-include(
-    ":first-model",
-    ":first-model-with-framework",
-    ":external"
-)
+dependencies {
+    implementation("com.google.protobuf:protobuf-java-util")
+}

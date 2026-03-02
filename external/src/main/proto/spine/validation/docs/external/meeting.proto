@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package spine.validation.docs.external;
+
+import "google/protobuf/timestamp.proto";
+import "spine/options.proto";
+
+option (type_url_prefix) = "type.spine.io";
+option java_package = "io.spine.validation.docs.external";
+option java_multiple_files = true;
+
+// Provides meeting information with validation rules.
+message Meeting {
+
+    // The time when the meeting starts.
+    google.protobuf.Timestamp starts_at = 1 [
+        (required) = true,
+        (validate) = true
+    ];
+}
