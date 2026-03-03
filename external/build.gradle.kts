@@ -32,3 +32,5 @@ plugins {
 dependencies {
     implementation("com.google.protobuf:protobuf-java-util")
 }
+
+spineCompilerRemoteDebug(enabled = false)
