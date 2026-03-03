@@ -29,8 +29,4 @@ plugins {
     id("io.spine.validation") version "2.0.0-SNAPSHOT.401"
 }
 
-dependencies {
-    implementation("com.google.protobuf:protobuf-java-util")
-}
-
 spineCompilerRemoteDebug(enabled = false)
