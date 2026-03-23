@@ -26,5 +26,5 @@
 
 plugins {
     module
-    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.054"
+    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.055"
 }
