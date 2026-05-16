@@ -26,8 +26,8 @@
 
 package io.spine.validation.docs.firstmodel;
 
+import io.spine.string.TemplateStrings;
 import io.spine.validation.ValidationException;
-import io.spine.validation.TemplateStrings;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

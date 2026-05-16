@@ -26,8 +26,8 @@
 
 package io.spine.validation.docs.firstmodel
 
+import io.spine.string.format
 import io.spine.validation.ValidationException
-import io.spine.validation.format
 import org.junit.jupiter.api.Test
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.assertions.throwables.shouldNotThrowAny
