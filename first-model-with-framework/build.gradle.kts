@@ -28,3 +28,16 @@ plugins {
     module
     id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.063"
 }
+
+//TODO:2026-05-16:alexander.yevsyukov: Remove when CoreJvm upgrades to new Base and Validation.
+dependencies {
+    val spineBase = "io.spine:spine-base:2.0.0-SNAPSHOT.389"
+    configurations.all {
+        resolutionStrategy {
+            force(spineBase)
+            force("io.spine.tools:validation-java-bundle:2.0.0-SNAPSHOT.430")
+            force("io.spine:spine-validation-jvm-runtime:2.0.0-SNAPSHOT.430")
+        }
+    }
+    spineCompiler(spineBase)
+}
