@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Temporarily disable the runtime check of Protobuf version compatibility.
-export TEMPORARILY_DISABLE_PROTOBUF_VERSION_CHECK=true
-
 #
 # Copyright © 2015 the original authors.
 #
@@ -60,7 +57,7 @@ export TEMPORARILY_DISABLE_PROTOBUF_VERSION_CHECK=true
 #       Darwin, MinGW, and NonStop.
 #
 #   (3) This script is generated from the Groovy template
-#       https://github.com/gradle/gradle/blob/HEAD/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+#       https://github.com/gradle/gradle/blob/3d91ce3b8caaf77ad09f381f43615b715b53f72c/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
 #       within the Gradle project.
 #
 #       You can find Gradle at https://github.com/gradle/gradle/.
