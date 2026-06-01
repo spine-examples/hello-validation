@@ -26,7 +26,7 @@
 
 plugins {
     module
-    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.065"
+    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.068"
 }
 
 //TODO:2026-05-16:alexander.yevsyukov: Remove when CoreJvm upgrades to new Base and Validation.

@@ -26,7 +26,7 @@
 
 plugins {
     module
-    id("io.spine.validation") version "2.0.0-SNAPSHOT.444"
+    id("io.spine.validation") version "2.0.0-SNAPSHOT.446"
 }
 
 spineCompilerRemoteDebug(enabled = false)
