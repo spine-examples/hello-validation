@@ -26,18 +26,21 @@
 
 plugins {
     module
-    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.068"
+    id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.080"
 }
 
-//TODO:2026-05-16:alexander.yevsyukov: Remove when CoreJvm upgrades to new Base and Validation.
+// The CoreJvm compiler generates Protobuf code against gencode `4.35.0`, but
+// resolves the older `4.34.1` runtime transitively. Force the runtime up to
+// match the generated code, the same way the main Validation build pins Protobuf.
 dependencies {
-    val spineBase = "io.spine:spine-base:2.0.0-SNAPSHOT.389"
+    val protobufVersion = "4.35.0"
     configurations.all {
         resolutionStrategy {
-            force(spineBase)
-            force("io.spine.tools:validation-java-bundle:2.0.0-SNAPSHOT.430")
-            force("io.spine:spine-validation-jvm-runtime:2.0.0-SNAPSHOT.430")
+            force(
+                "com.google.protobuf:protobuf-java:$protobufVersion",
+                "com.google.protobuf:protobuf-java-util:$protobufVersion",
+                "com.google.protobuf:protobuf-kotlin:$protobufVersion"
+            )
         }
     }
-    spineCompiler(spineBase)
 }
