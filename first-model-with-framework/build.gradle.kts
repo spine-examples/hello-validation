@@ -29,11 +29,13 @@ plugins {
     id("io.spine.core-jvm") version "2.0.0-SNAPSHOT.080"
 }
 
-// The CoreJvm compiler generates Protobuf code against gencode `4.35.0`, but
-// resolves the older `4.34.1` runtime transitively. Force the runtime up to
-// match the generated code, the same way the main Validation build pins Protobuf.
+// A runtime must be at least as new as the Protobuf gencode it loads. The Validation docs
+// build rewrites the plugin versions above to match the main Validation build, whose plugins
+// generate gencode `4.36.x`, while the runtime resolved transitively may be older.
+// Force the runtime to `Protobuf.version` from the `buildSrc` of the main Validation build;
+// it also works with the older gencode of the plugin versions committed here.
 dependencies {
-    val protobufVersion = "4.35.0"
+    val protobufVersion = "4.36.2"
     configurations.all {
         resolutionStrategy {
             force(
